@@ -9,6 +9,8 @@ class Post(models.Model):
 #     # est le nom del'objet . models.Model est un modèle de djago 
     author = models.ForeignKey('auth.User', on_delete=models.CASCADE)
     # Autheur, ForeignKey lien vers autre model
+    # on_delete=models.CASCADE ne se trouve pas dans le docs officielle. 
+    # Sans cela la migrations ne passera pas S
     title = models.CharField(max_length=200)
      # CharField champ avec caracère limité 
     text = models.TextField()
